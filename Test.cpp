@@ -19,16 +19,22 @@ void Test::Initialize()
 	m_graphics->CreateWindow("Physics", 800, 600);
 	m_input = new Input();
 	m_time = new Time();
+	m_time->SetFixedDeltaTime(1.0f / 60.0f);
 	m_world = new World();
 }
 
 void Test::Run()
 {
-	Update(); //updates game
+	Update(); //game loop
 	m_fixedTime += m_time->TimeDelta();
 	//while loop time accum > fixedtimeDelta
-	FixedUpdate();
-	
+	while (m_fixedTime > m_time->GetFixedDeltaTime())
+	{
+		FixedUpdate();
+		m_fixedTime -= m_time->GetFixedDeltaTime();
+	}
+
+	//render
 	PreRender(); //clears screen
 	Render();
 	PostRender(); //presents the screen
