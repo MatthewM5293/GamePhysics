@@ -7,26 +7,25 @@ void ParticleTest::Initialize()
 	Test::Initialize();
 }
 
-void ParticleTest::Run()
+void ParticleTest::Update()
 {
-	UpdateEvents();
-
-	m_input->Update();
-	m_time->Update();
+	Test::Update();
 
 	if (m_input->GetMouseButton(0))
 	{
 		glm::vec2 velocity = randomUnitCircle() * randomf(100, 200);
-		auto po = new PhysicsObject(new Body(m_input -> GetMousePosition(), velocity), new CircleShape(randomf(10, 50), { randomf(1) , randomf(1) , randomf(1) , 1 }));
+		auto po = new PhysicsObject(new Body(m_input->GetMousePosition(), velocity), new CircleShape(randomf(10, 50), { randomf(1) , randomf(1) , randomf(1) , 1 }));
 		m_world->AddPhysicsObject(po);
 	}
+}
+
+void ParticleTest::FixedUpdate()
+{
 	m_world->Step(m_time->TimeDelta());
+}
 
-	m_graphics->SetColor({ 0, 0, 0, 1 });
-	m_graphics->Clear();
-
+void ParticleTest::Render()
+{
 	m_graphics->DrawCircle(m_input->GetMousePosition(), 30, { randomf(), randomf(), randomf(), 1 });
-	m_world->Draw(m_graphics); //fix?
-
-	m_graphics->Present();
+	m_world->Draw(m_graphics);
 }
