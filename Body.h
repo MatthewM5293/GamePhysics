@@ -30,4 +30,6 @@ public:
 
 	float mass{ 1 };
 	float invMass{ 1 };
+
+	float damping{ 0 };
 };
