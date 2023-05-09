@@ -21,7 +21,7 @@ void ParticleTest::Update()
 
 void ParticleTest::FixedUpdate()
 {
-	m_world->Step(m_time->TimeDelta());
+	m_world->Step(m_time->GetFixedDeltaTime());
 }
 
 void ParticleTest::Render()
