@@ -28,7 +28,7 @@ void Test::Run()
 	Update(); //game loop
 	m_fixedTime += m_time->TimeDelta();
 	//while loop time accum > fixedtimeDelta
-	while (m_fixedTime > m_time->GetFixedDeltaTime())
+	while (m_fixedTime >= m_time->GetFixedDeltaTime())
 	{
 		FixedUpdate();
 		m_fixedTime -= m_time->GetFixedDeltaTime();

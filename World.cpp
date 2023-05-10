@@ -1,5 +1,7 @@
 #include "World.h"
 
+glm::vec2 World::gravity{ 0.0f, 9.8f };
+
 World::~World()
 {
 	m_objects.clear();

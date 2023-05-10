@@ -1,5 +1,6 @@
 #include "Body.h"
 #include "Integrator.h"
+#include "World.h"
 
 void Body::ApplyForce(const glm::vec2& force)
 {
@@ -8,6 +9,11 @@ void Body::ApplyForce(const glm::vec2& force)
 
 void Body::Step(float dt)
 {
+	if (type != DYNAMIC) return;
+
+	//gravity
+	ApplyForce(World::gravity * gravityScale * mass);
+
 	Integrator::ExplicitEuler(*this, dt);
 	ClearForce();
 

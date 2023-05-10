@@ -14,7 +14,7 @@ void ParticleTest::Update()
 	if (m_input->GetMouseButton(0))
 	{
 		glm::vec2 velocity = randomUnitCircle() * randomf(100, 200);
-		auto po = new PhysicsObject(new Body(m_input->GetMousePosition(), velocity), new CircleShape(randomf(10, 50), { randomf(1) , randomf(1) , randomf(1) , 1 }));
+		auto po = new PhysicsObject(new Body(m_input->GetMousePosition(), velocity), new CircleShape(randomf(10.0f, 50.0f), { randomf(1) , randomf(1) , randomf(1) , 1 }));
 		m_world->AddPhysicsObject(po);
 	}
 }

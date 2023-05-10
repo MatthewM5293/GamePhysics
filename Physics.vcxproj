@@ -153,6 +153,8 @@
   <ItemGroup>
     <ClCompile Include="Body.cpp" />
     <ClCompile Include="CircleShape.cpp" />
+    <ClCompile Include="ForceGenerator.cpp" />
+    <ClCompile Include="ForceTest.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -166,6 +168,8 @@
   <ItemGroup>
     <ClInclude Include="Body.h" />
     <ClInclude Include="CircleShape.h" />
+    <ClInclude Include="ForceGenerator.h" />
+    <ClInclude Include="ForceTest.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Integrator.h" />
