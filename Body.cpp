@@ -1,6 +1,7 @@
 #include "Body.h"
 #include "Integrator.h"
 #include "World.h"
+#include "Shape.h"
 
 void Body::ApplyForce(const glm::vec2& force)
 {
@@ -18,4 +19,9 @@ void Body::Step(float dt)
 	ClearForce();
 
 	velocity *= (1.0f / (1.0f + (damping * dt))); //damping = 2
+}
+
+void Body::Draw(Graphics* m_graphics)
+{
+	shape->Draw(m_graphics, position);
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include "PhysicsObject.h"
 
 namespace Integrator
 {

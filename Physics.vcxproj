@@ -156,10 +156,10 @@
     <ClCompile Include="ForceGenerator.cpp" />
     <ClCompile Include="ForceTest.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="GravitationalGenerator.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ParticleTest.cpp" />
-    <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Primitives.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -171,10 +171,10 @@
     <ClInclude Include="ForceGenerator.h" />
     <ClInclude Include="ForceTest.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="GravitationalGenerator.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Integrator.h" />
     <ClInclude Include="ParticleTest.h" />
-    <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Primitives.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Shape.h" />

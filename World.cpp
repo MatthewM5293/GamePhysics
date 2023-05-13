@@ -1,34 +1,55 @@
 #include "World.h"
+#include "Body.h"
+#include "ForceGenerator.h"
 
 glm::vec2 World::gravity{ 0.0f, 9.8f };
 
 World::~World()
 {
-	m_objects.clear();
+	for (auto body : m_bodies)
+	{
+		delete body;
+	}
+	m_bodies.clear();
 }
 
 void World::Step(float dt)
 {
-	for (auto& i : m_objects)
+	if (m_bodies.size() > 0 && m_forceGenerators.size() > 0)
 	{
-		i->Step(dt);
+		std::vector<Body*> bodies(m_bodies.begin(), m_bodies.end());
+		for (auto forceGenerator : m_forceGenerators)
+		{
+			forceGenerator->Apply(bodies);
+		}
+
+	}
+
+	for (auto& body : m_bodies)
+	{
+		body->Step(dt);
 	}
 }
 
 void World::Draw(Graphics* graphics)
 {
-	for (auto& i : m_objects)
+	for (auto& body : m_bodies)
 	{
-		i->Draw(graphics);
+		body->Draw(graphics);
 	}
 }
 
-void World::AddPhysicsObject(PhysicsObject* po)
+void World::AddBody(Body* body)
 {
-	m_objects.push_back(po);
+	m_bodies.push_back(body);
 }
 
-void World::RemovePhysicsObject(PhysicsObject* po)
+void World::RemoveBody(Body* body)
 {
-	m_objects.remove(po);
+	m_bodies.remove(body);
+}
+
+void World::AddForceGenerator(ForceGenerator* forceGenerator)
+{
+	m_forceGenerators.push_back(forceGenerator);
 }

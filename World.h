@@ -1,18 +1,26 @@
 #pragma once
-#include "PhysicsObject.h"
 #include <list>
+#include <vector>
+#include "glm/glm.hpp"
 
 class World
 {
 public:
 	~World();
+
 	void Step(float dt);
 	void Draw(class Graphics* graphics);
-	void AddPhysicsObject(PhysicsObject* po);
-	void RemovePhysicsObject(PhysicsObject* po);
+
+	void AddBody(class Body* body);
+	void RemoveBody(class Body* body);
+
+	void AddForceGenerator(class ForceGenerator* forceGenerator);
+
 public:
 	static glm::vec2 gravity;
 
 private:
-	std::list<PhysicsObject*> m_objects;
+	std::list< class Body*> m_bodies;
+	std::vector<class ForceGenerator*> m_forceGenerators;
+
 };
