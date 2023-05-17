@@ -13,8 +13,8 @@ public:
 
 
 public:
-	Body(class Shape* shape, const glm::vec2& position, const glm::vec2& velocity = {0, 0}, float mass = 1, Type type = Type::DYNAMIC) :
-		shape{ shape }, 
+	Body(class Shape* _shape, const glm::vec2& position, const glm::vec2& velocity = {0, 0}, float mass = 1, Type type = Type::DYNAMIC) :
+		shape{ _shape },
 		position{ position }, 
 		velocity{ velocity },
 		mass{ mass },
@@ -28,6 +28,8 @@ public:
 	void ApplyForce(const glm::vec2& force);
 	void Step(float dt);
 	void Draw(class Graphics* m_graphics);
+
+	bool Intersects(class Body* body);
 
 	void ClearForce() { force = glm::vec2{ 0, 0 }; }
 
