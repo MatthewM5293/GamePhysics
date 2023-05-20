@@ -6,6 +6,12 @@
 #include "AreaForce.h"
 #include "DragForce.h"
 
+#define POINT_FORCE
+/*
+#define AREA_FORCE
+#define DRAG_FORCE
+*/
+
 void ForceTest::Initialize()
 {
 	//calls parent method
@@ -38,8 +44,8 @@ void ForceTest::Update()
 	if (m_input->GetMouseButton(0))
 	{
 		glm::vec2 velocity = randomUnitCircle() * randomf(100, 200);
-		float size = randomf(1, 8);
-		auto body = new Body(new CircleShape(size * 7, { randomf(1) , randomf(1) , randomf(1) , 1 }), m_input->GetMousePosition(), velocity, randomf(1, 5));
+		float size = randomf(1, 20);
+		auto body = new Body(new CircleShape(size * 4, { randomf(1) , randomf(1) , randomf(1) , 1 }), m_input->GetMousePosition(), velocity, randomf(1, 5));
 		body->damping = 1;
 		body->gravityScale = 30;
 

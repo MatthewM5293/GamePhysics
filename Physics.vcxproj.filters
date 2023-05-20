@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\ForceGenerators">
+      <UniqueIdentifier>{badf7a16-c720-406b-9e31-aff546b21eb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -48,20 +51,26 @@
     <ClCompile Include="ForceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ForceGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GravitationalGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PointForce.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AreaForce.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DragForce.cpp">
+    <ClCompile Include="Joint.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JointTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ForceGenerator.cpp">
+      <Filter>Source Files\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="DragForce.cpp">
+      <Filter>Source Files\ForceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="GravitationalGenerator.cpp">
+      <Filter>Source Files\ForceGenerators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +126,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DragForce.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Joint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JointTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

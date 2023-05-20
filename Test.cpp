@@ -25,9 +25,9 @@ void Test::Initialize()
 
 void Test::Run()
 {
-	Update(); //game loop
+	Update();
+
 	m_fixedTime += m_time->TimeDelta();
-	//while loop time accum > fixedtimeDelta
 	while (m_fixedTime >= m_time->GetFixedDeltaTime())
 	{
 		FixedUpdate();
@@ -35,9 +35,9 @@ void Test::Run()
 	}
 
 	//render
-	PreRender(); //clears screen
+	PreRender();
 	Render();
-	PostRender(); //presents the screen
+	PostRender();
 }
 
 void Test::Update()

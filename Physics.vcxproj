@@ -160,6 +160,8 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GravitationalGenerator.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Joint.cpp" />
+    <ClCompile Include="JointTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ParticleTest.cpp" />
     <ClCompile Include="PointForce.cpp" />
@@ -179,6 +181,8 @@
     <ClInclude Include="GravitationalGenerator.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Integrator.h" />
+    <ClInclude Include="Joint.h" />
+    <ClInclude Include="JointTest.h" />
     <ClInclude Include="ParticleTest.h" />
     <ClInclude Include="PointForce.h" />
     <ClInclude Include="Primitives.h" />

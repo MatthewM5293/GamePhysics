@@ -13,14 +13,14 @@ public:
 
 
 public:
-	Body(class Shape* _shape, const glm::vec2& position, const glm::vec2& velocity = {0, 0}, float mass = 1, Type type = Type::DYNAMIC) :
-		shape{ _shape },
+	Body(class Shape* shape, const glm::vec2& position, const glm::vec2& velocity = {0, 0}, float mass = 1, Type type = Type::DYNAMIC) :
+		shape{ shape },
 		position{ position }, 
 		velocity{ velocity },
 		mass{ mass },
 		type{ type }
 	{
-		if (type == STATIC) mass = 0;
+		//if (type == STATIC) mass = 0;
 		invMass = ( mass == 0) ? 0 : 1 / mass;
 	}
 
