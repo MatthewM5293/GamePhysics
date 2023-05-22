@@ -22,15 +22,15 @@
     <Filter Include="Source Files\Tests">
       <UniqueIdentifier>{abf77fe0-d083-41b0-888b-98829e38da41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine\Shapes">
+      <UniqueIdentifier>{d789ecd9-4d36-4f7c-a7b9-5facb925f410}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Body.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\CircleShape.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Graphics.cpp">
@@ -77,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="Physics\PointForce.cpp">
       <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\CircleShape.cpp">
+      <Filter>Source Files\Engine\Shapes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,9 +146,6 @@
     <ClInclude Include="Engine\Body.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\CircleShape.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\Graphics.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
@@ -159,9 +159,6 @@
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Random.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Shape.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Time.h">
@@ -199,6 +196,12 @@
     </ClInclude>
     <ClInclude Include="Physics\PointForce.h">
       <Filter>Source Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\CircleShape.h">
+      <Filter>Source Files\Engine\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Shape.h">
+      <Filter>Source Files\Engine\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
