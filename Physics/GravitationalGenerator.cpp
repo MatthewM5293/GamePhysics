@@ -1,5 +1,5 @@
 #include "GravitationalGenerator.h"
-#include "Body.h"
+#include "../Engine/Body.h"
 
 void GravitationalGenerator::Apply(std::vector<class Body*> bodies)
 {

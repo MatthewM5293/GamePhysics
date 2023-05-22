@@ -1,10 +1,10 @@
-#include "ForceTest.h"
-#include "Body.h"
-#include "CircleShape.h"
-#include "GravitationalGenerator.h"
-#include "PointForce.h"
-#include "AreaForce.h"
-#include "DragForce.h"
+#include "../Tests/ForceTest.h"
+#include "../Engine/Body.h"
+#include "../Engine/CircleShape.h"
+#include "../Physics/GravitationalGenerator.h"
+#include "../Physics/PointForce.h"
+#include "../Physics/AreaForce.h"
+#include "../Physics/DragForce.h"
 
 #define POINT_FORCE
 /*

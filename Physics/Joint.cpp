@@ -1,6 +1,6 @@
 #include "Joint.h"
-#include "Body.h"
-#include "Graphics.h"
+#include "../Engine/Body.h"
+#include "../Engine/Graphics.h"
 
 Joint::Joint(Body* bodyA, Body* bodyB, float stiffness, float restLength) :
 	m_bodyA{ bodyA },
@@ -35,5 +35,5 @@ void Joint::Step(float dt)
 
 void Joint::Draw(Graphics* graphics)
 {
-	graphics->DrawLine(m_bodyA->position, m_bodyB->position, glm::vec4{ 1, 1, 1, 1 });
+	graphics->DrawLine(graphics->WorldToScreen(m_bodyA->position), graphics->WorldToScreen(m_bodyB->position), glm::vec4{ 1, 1, 1, 1 });
 }

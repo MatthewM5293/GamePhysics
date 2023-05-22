@@ -1,30 +1,28 @@
-#include "JointTest.h"
-#include "CircleShape.h"
-#include "World.h"
-#include "Body.h"
-#include "Joint.h"
+#include "../Tests/JointTest.h"
+#include "../Engine/CircleShape.h"
+#include "../Engine/World.h"
+#include "../Engine/Body.h"
+#include "../Physics/Joint.h"
 
-//#define CHAIN
+#define CHAIN
 
-#define SPRING_STIFFNESS	200
-#define SPRING_LENGTH		100
-#define BODY_DAMPING		50
-#define CHAIN_SIZE			4
+#define SPRING_STIFFNESS	100
+#define SPRING_LENGTH		2
+#define BODY_DAMPING		10
+#define CHAIN_SIZE			3
 #define GRID_SIZE			5
 
 void JointTest::Initialize()
 {
 	Test::Initialize();
-	//for loop
-	m_anchor = new Body(new CircleShape(20, { 1, 1, 1, 1 }), { 400, 100 }, { 0, 0 }, 0, Body::KINEMATIC);
+	m_anchor = new Body(new CircleShape(1, { 1, 1, 1, 1 }), { 0, 0 }, { 0, 0 }, 0, Body::KINEMATIC);
 	m_world->AddBody(m_anchor);
 	auto prevBody = m_anchor;
 
 #if defined(CHAIN)
 	for (int i = 0; i < CHAIN_SIZE; i++)
 	{
-		auto body = new Body(new CircleShape(20, { 1, 1, 1, 1 }), { 400, 200 + (i * 100) }, { 0, 0 }, 1, Body::DYNAMIC);
-		body->gravityScale = 250;
+		auto body = new Body(new CircleShape(0.5, { 1, 1, 1, 1 }), { 0, 0 });
 		body->damping = BODY_DAMPING;
 		m_world->AddBody(body);
 
@@ -39,13 +37,11 @@ void JointTest::Initialize()
 
 	for (int i = 0; i < GRID_SIZE; i++)
 	{
-		auto bodyA = new Body(new CircleShape(20, { 1, 1, 1, 1 }), { 400, 200 + (i * 100) }, { 0, 0 }, 1, Body::DYNAMIC);
-		bodyA->gravityScale = 250;
+		auto bodyA = new Body(new CircleShape(0.5, { 1, 1, 1, 1 }), { 0, 0 + (i) });
 		bodyA->damping = BODY_DAMPING;
 		m_world->AddBody(bodyA);
 
-		auto bodyB = new Body(new CircleShape(20, { 1, 1, 1, 1 }), { 800, 200 + (i * 100) }, { 0, 0 }, 1, Body::DYNAMIC);
-		bodyB->gravityScale = 250;
+		auto bodyB = new Body(new CircleShape(0.5, { 1, 1, 1, 1 }), { 0, 2 + (i) });
 		bodyB->damping = BODY_DAMPING;
 		m_world->AddBody(bodyB);
 
@@ -79,7 +75,6 @@ void JointTest::Initialize()
 		auto joint5 = new Joint(bodyB, bodyA, SPRING_STIFFNESS, SPRING_LENGTH);
 		m_world->AddJoint(joint5);
 
-
 		prevBodyA = bodyA;
 		prevBodyB = bodyB;
 	}
@@ -91,7 +86,7 @@ void JointTest::Initialize()
 void JointTest::Update()
 {
 	Test::Update();
-	m_anchor->position = m_input->GetMousePosition();
+	m_anchor->position = m_graphics->ScreenToWorld( m_input->GetMousePosition());
 }
 
 void JointTest::FixedUpdate()
@@ -101,6 +96,6 @@ void JointTest::FixedUpdate()
 
 void JointTest::Render()
 {
-	m_graphics->DrawCircle(m_input->GetMousePosition(), 10, { randomf(), randomf(), randomf(), 1 });
 	m_world->Draw(m_graphics);
+	m_graphics->DrawCircle(m_input->GetMousePosition(), 10, { randomf(), randomf(), randomf(), 1 });
 }
