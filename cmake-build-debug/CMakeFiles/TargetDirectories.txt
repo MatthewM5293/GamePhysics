@@ -1,0 +1,3 @@
+C:/Users/mmunozramirez/Documents/Visual Studio 2022/GAT315/Physics/cmake-build-debug/CMakeFiles/Physics.dir
+C:/Users/mmunozramirez/Documents/Visual Studio 2022/GAT315/Physics/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mmunozramirez/Documents/Visual Studio 2022/GAT315/Physics/cmake-build-debug/CMakeFiles/rebuild_cache.dir

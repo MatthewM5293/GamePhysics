@@ -21,7 +21,7 @@ public:
 		type{ type }
 	{
 		//if (type == STATIC) mass = 0;
-		invMass = ( mass == 0) ? 0 : 1 / mass;
+		invMass = ( mass == 0 || type != DYNAMIC) ? 0 : 1 / mass;
 	}
 
 
